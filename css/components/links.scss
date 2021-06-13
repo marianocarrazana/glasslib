@@ -1,0 +1,38 @@
+/*
+-------------------------------------------------------------------------------
+6.  Links [hm-06]
+-------------------------------------------------------------------------------
+*/
+
+a {
+    color: #1890ff;
+    text-decoration: none;
+}
+a:hover {
+    color: #45a3fb;
+    text-decoration: underline;
+}
+.dark-mode a {
+    color: #1890ff;
+}
+.dark-mode a:hover {
+    color: #45a3fb;
+}
+
+/* Hyperlink (anti-aliasing removed in dark mode) */
+
+.dark-mode .hyperlink {
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+}
+
+/* Underlined hyperlink */
+
+.hyperlink-underline {
+    text-decoration: underline;
+}
+.dark-mode .hyperlink-underline {
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+}
+

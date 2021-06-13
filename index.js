@@ -1,3 +1,3 @@
-var halfmoon = require("./js/halfmoon-module");
+var glasslib = require("./js/glasslib-module");
 
-module.exports = halfmoon;
+module.exports = glasslib;

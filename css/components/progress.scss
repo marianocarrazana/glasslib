@@ -1,0 +1,121 @@
+/*
+-------------------------------------------------------------------------------
+24. Progress [hm-24]
+-------------------------------------------------------------------------------
+*/
+
+.progress {
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    height: 0.8rem;
+    font-size: 1.2rem;
+    line-height: 0;
+    border-radius: 3.2rem;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.dark-mode .progress {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Progress bar */
+
+.progress-bar {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    color: #ffffff;
+    background-color: #1890ff;
+    border-radius: inherit;
+}
+.dark-mode .progress-bar {
+    color: #ffffff;
+    background-color: #1890ff;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+}
+.progress-bar:not(:only-child) {
+    border-radius: 0;
+}
+.progress-bar:not(:only-child):last-child {
+    border-top-right-radius: inherit;
+    border-bottom-right-radius: inherit;
+}
+
+/* Progress group */
+
+.progress-group {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+}
+.progress-group > .progress {
+    position: relative;
+    -ms-flex: 1 1 0%;
+    flex: 1 1 0%;
+    min-width: 0;
+    margin-bottom: 0;
+}
+.progress-group-label {
+    font-size: 1.4rem;
+}
+.progress-group > .progress {
+    margin-left: 0.4rem;
+    margin-right: 0.4rem;
+}
+.progress-group > .progress-group-label {
+    margin-left: 0.4rem;
+    margin-right: 0.4rem;
+}
+.progress-group > .progress:first-child,
+.progress-group > .progress-group-label:first-child {
+    margin-left: 0;
+}
+.progress-group > .progress:last-child,
+.progress-group > .progress-group-label:last-child {
+    margin-right: 0;
+}
+
+/* Progress bar animated */
+
+.progress-bar-animated {
+    position: relative;
+}
+.progress-bar-animated::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3));
+    transform: translateX(-100%);
+    animation: progress-bar-shine 2s infinite;
+}
+.dark-mode .progress-bar-animated::before {
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3));
+}
+.progress-bar-animated.highlight-dark::before {
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.1));
+}
+.dark-mode .progress-bar-animated.highlight-dark::before {
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.2));
+}
+@keyframes progress-bar-shine {
+    to {
+        transform: translateX(0);
+        opacity: 0.1;
+    }
+}

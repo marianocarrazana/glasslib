@@ -1,0 +1,332 @@
+/*
+4.  Layout [hm-04]
+
+Notes:
+    ~ The following section contains the position, width, height, and bg color 
+    related styles of the page-wrapper, sticky-alerts, navbars, sidebar, and 
+    content-wrapper. These are grouped together because reading them all at 
+    once in serial makes it quite easy to understand how pages are structured.
+    ~ The styles of the children of the above elements can be found in their 
+    own sections of this stylesheet. These sections are:
+        ~ 14. Alerts
+        ~ 15. Navbar content
+        ~ 16. Sidebar content
+    ~ The page-wrapper can have additional helper classes which automatically 
+    fixes the positions and the sizes of the children elements. For example, 
+    .page-wrapper.with-navbar will automatically push the content-wrapper down 
+    by an amount which is equal to the height of the navbar, in order to make 
+    space for the navbar.
+-------------------------------------------------------------------------------
+*/
+
+html,
+body {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+}
+
+/* Page wrapper */
+
+.page-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Sticky alerts */
+
+.sticky-alerts {
+    position: fixed;
+    top: 0;
+    right: 2.4rem;
+    z-index: 100; /* Can be used on top of modals */
+}
+
+/* Navbar */
+
+.navbar {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    width: 100%;
+    height: 5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: #ffffff;
+    background-image: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    background-color:rgba(255,255,255,.45);
+}
+.dark-mode .navbar {
+    background-color:rgba(0,0,0,.6);
+    background-image: none;
+    border-color: rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.navbar.navbar-fixed-bottom {
+    height: 5rem;
+    border-bottom: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.dark-mode .navbar.navbar-fixed-bottom {
+    border-color: rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.navbar.navbar-static-bottom {
+    border-bottom: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.dark-mode .navbar.navbar-static-bottom {
+    border-color: rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.page-wrapper > .navbar {
+    position: fixed; 
+    left: 0;
+    z-index: 40;
+    display: none;
+}
+.page-wrapper > .navbar:not(.navbar-fixed-bottom) {
+    top: 0;
+}
+.page-wrapper.with-navbar > .navbar:not(.navbar-fixed-bottom) {
+    display: -ms-flexbox;
+    display: flex;
+}
+.page-wrapper > .navbar.navbar-fixed-bottom {
+    bottom: 0;
+}
+.page-wrapper.with-navbar-fixed-bottom > .navbar.navbar-fixed-bottom {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+/* Sidebar */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 26rem;
+    max-width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 20;
+    background-color: #ffffff;
+    background-image: none;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    background-color:rgba(255,255,255,.45);
+    box-shadow: 0.1rem 0 1em 0 rgba(55, 55, 55, 0.5);
+}
+.dark-mode .sidebar {
+    background-color:rgba(0,0,0,.6);
+    background-image: none;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+.page-wrapper > .sidebar {
+    display: none;
+}
+.page-wrapper.with-sidebar > .sidebar {
+    display: block;
+}
+
+/* Content wrapper */
+
+.content-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    overflow: auto;
+}
+
+/* Page wrapper helper classes */
+
+/* With navbar */
+
+.page-wrapper.with-navbar > .sticky-alerts {
+    top: 5rem;
+}
+.page-wrapper.with-navbar > .content-wrapper {
+    top: 5rem;
+    height: calc(100% - 5rem);
+}
+.page-wrapper.with-navbar > .sidebar {
+    top: 5rem;
+    height: calc(100% - 5rem);
+}
+
+/* With sidebar */
+
+.page-wrapper.with-sidebar > .content-wrapper {
+    left: 26rem;
+    width: calc(100% - 26rem);
+}
+@media (max-width: 768px) {
+    .page-wrapper.with-sidebar > .content-wrapper {
+        width: 100%;
+    }
+}
+
+/* Hidden sidebar */
+
+.page-wrapper.with-sidebar[data-sidebar-hidden] > .sidebar {
+    left: -100%;
+}
+.page-wrapper.with-sidebar[data-sidebar-hidden] > .content-wrapper {
+    width: 100%;
+    left: 0;
+}
+
+/* With navbar fixed to bottom */
+
+.page-wrapper.with-navbar-fixed-bottom > .content-wrapper {
+    bottom: 5rem;
+    height: calc(100% - 5rem);
+}
+
+.page-wrapper.with-navbar-fixed-bottom > .sidebar {
+    bottom: 5rem;
+    height: calc(100% - 5rem);
+}
+
+/* With navbar and navbar fixed to bottom */
+
+.page-wrapper.with-navbar.with-navbar-fixed-bottom > .content-wrapper {
+    top: 5rem;
+    bottom: 5rem;
+    height: calc(100% - 5rem - 5rem);
+}
+
+.page-wrapper.with-navbar.with-navbar-fixed-bottom > .sidebar {
+    top: 5rem;
+    bottom: 5rem;
+    height: calc(100% - 5rem - 5rem);
+}
+
+/* Full height sidebar */
+
+.page-wrapper.with-sidebar[data-sidebar-type~="full-height"] > .sidebar {
+    height: 100%;
+    top: 0;
+}
+.page-wrapper.with-sidebar[data-sidebar-type~="full-height"] > .navbar:not(.navbar-fixed-bottom) {
+    left: 26rem;
+    width: calc(100% - 26rem);
+}
+.page-wrapper.with-sidebar[data-sidebar-type~="full-height"] > .navbar.navbar-fixed-bottom {
+    left: 26rem;
+    width: calc(100% - 26rem);
+}
+@media (max-width: 768px) {
+    .page-wrapper.with-sidebar[data-sidebar-type~="full-height"] > .navbar:not(.navbar-fixed-bottom),
+    .page-wrapper.with-sidebar[data-sidebar-type~="full-height"] > .navbar.navbar-fixed-bottom {
+        width: 100%;
+    }
+}
+.page-wrapper.with-sidebar[data-sidebar-type~="full-height"][data-sidebar-hidden] > .navbar:not(.navbar-fixed-bottom),
+.page-wrapper.with-sidebar[data-sidebar-type~="full-height"][data-sidebar-hidden] > .navbar.navbar-fixed-bottom {
+    left: 0;
+    width: 100%;
+}
+
+/* Overlayed sidebar */
+
+.page-wrapper.with-sidebar[data-sidebar-type~="overlayed-all"] > .navbar:not(.navbar-fixed-bottom),
+.page-wrapper.with-sidebar[data-sidebar-type~="overlayed-all"] > .content-wrapper,
+.page-wrapper.with-sidebar[data-sidebar-type~="overlayed-all"] > .navbar.navbar-fixed-bottom {
+    left: 0;
+    width: 100%;
+}
+.page-wrapper.with-sidebar[data-sidebar-type~="overlayed-all"] > .sidebar {
+    height: 100%;
+    top: 0;
+    z-index: 50;
+}
+.page-wrapper.with-sidebar[data-sidebar-type~="overlayed-all"] > .sidebar-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 45;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+.page-wrapper.with-sidebar[data-sidebar-type~="overlayed-all"][data-sidebar-hidden] > .sidebar-overlay {
+    display: none;
+}
+@media (max-width: 768px) {
+    .page-wrapper.with-sidebar[data-sidebar-type~="overlayed-sm-and-down"] > .navbar:not(.navbar-fixed-bottom),
+    .page-wrapper.with-sidebar[data-sidebar-type~="overlayed-sm-and-down"] > .content-wrapper,
+    .page-wrapper.with-sidebar[data-sidebar-type~="overlayed-sm-and-down"] > .navbar.navbar-fixed-bottom {
+        left: 0;
+        width: 100%;
+    }
+    .page-wrapper.with-sidebar[data-sidebar-type~="overlayed-sm-and-down"] > .sidebar {
+        height: 100%;
+        top: 0;
+        z-index: 50;
+    }
+    .page-wrapper.with-sidebar[data-sidebar-type~="overlayed-sm-and-down"] > .sidebar-overlay {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 45;
+        background-color: rgba(0, 0, 0, 0.75);
+    }
+    .page-wrapper.with-sidebar[data-sidebar-type~="overlayed-sm-and-down"][data-sidebar-hidden] > .sidebar-overlay {
+        display: none;
+    }
+}
+
+/* With transitions (for sidebar toggles) */
+
+.page-wrapper.with-transitions.with-sidebar > .sidebar {
+    -webkit-transition: left .4s cubic-bezier(.25, .8, .25, 1);
+    transition: left .4s cubic-bezier(.25, .8, .25, 1);
+}
+.page-wrapper.with-transitions.with-sidebar .content-wrapper,
+.page-wrapper.with-transitions.with-sidebar[data-sidebar-type~="full-height"] > .navbar:not(.navbar-fixed-bottom),
+.page-wrapper.with-transitions.with-sidebar[data-sidebar-type~="full-height"] > .navbar.navbar-fixed-bottom {
+    -webkit-transition: width .4s cubic-bezier(.25, .8, .25, 1), left .4s cubic-bezier(.25, .8, .25, 1);
+    transition: width .4s cubic-bezier(.25, .8, .25, 1), left .4s cubic-bezier(.25, .8, .25, 1);
+}
+
+/* Janky scroll fix (for Safari) */
+
+.content-wrapper,
+.sidebar {
+    -webkit-overflow-scrolling: touch;
+}

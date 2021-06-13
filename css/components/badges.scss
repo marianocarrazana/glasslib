@@ -1,0 +1,211 @@
+/*
+-------------------------------------------------------------------------------
+20. Badges [hm-20]
+-------------------------------------------------------------------------------
+*/
+
+.badge {
+    display: inline-block;
+    position: relative;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    padding: 0.2rem 0.8rem;
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.4rem;
+}
+.dark-mode .badge {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+.badge-pill {
+    border-radius: 3rem;
+}
+
+/* Primary, success, secondary, danger badges. */
+
+/* Light mode */
+
+.badge.badge-primary {
+    color: #ffffff;
+    background-color: #1890ff;
+    border-color: #1890ff;
+}
+.badge.badge-success {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #0be881;
+    border-color: #0be881;
+}
+.badge.badge-secondary {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #ffcf00;
+    border-color: #ffcf00;
+}
+.badge.badge-danger {
+    color: #ffffff;
+    background-color: #ff4d4f;
+    border-color: #ff4d4f;
+}
+
+/* Dark mode */
+
+.dark-mode .badge.badge-primary {
+    color: #ffffff;
+    background-color: #1890ff;
+    border-color: #1890ff;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+}
+.dark-mode .badge.badge-success {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #0be881;
+    border-color: #0be881;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+}
+.dark-mode .badge.badge-secondary {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #ffcf00;
+    border-color: #ffcf00;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+}
+.dark-mode .badge.badge-danger {
+    color: #ffffff;
+    background-color: #ff4d4f;
+    border-color: #ff4d4f;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+}
+
+/* Badge group */
+
+.badge-group {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+.badge-group > .badge:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.badge-group > .badge:not(:last-child) {
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* Link badges */
+
+/* Light mode */
+
+a.badge:hover,
+a.badge-group:hover {
+    text-decoration: none;
+}
+a.badge:hover {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #f7f7f7;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+a.badge-group:hover > .badge {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #f7f7f7;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+a.badge.badge-primary:hover {
+    color: #ffffff;
+    background-color: #45a3fb;
+    border-color: #45a3fb;
+}
+a.badge-group:hover > .badge.badge-primary {
+    color: #ffffff;
+    background-color: #45a3fb;
+    border-color: #45a3fb;
+}
+a.badge.badge-success:hover {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #81eea8;
+    border-color: #81eea8;
+}
+a.badge-group:hover > .badge.badge-success {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #81eea8;
+    border-color: #81eea8;
+}
+a.badge.badge-secondary:hover {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #ffe04d;
+    border-color: #ffe04d;
+}
+a.badge-group:hover > .badge.badge-secondary {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #ffe04d;
+    border-color: #ffe04d;
+}
+a.badge.badge-danger:hover {
+    color: #ffffff;
+    background-color: #ed586c;
+    border-color: #ed586c;
+}
+a.badge-group:hover > .badge.badge-danger {
+    color: #ffffff;
+    background-color: #ed586c;
+    border-color: #ed586c;
+}
+
+/* Dark mode */
+
+.dark-mode a.badge:hover {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.025);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode a.badge-group:hover > .badge {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.025);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+.dark-mode a.badge.badge-primary:hover {
+    color: #ffffff;
+    background-color: #45a3fb;
+    border-color: #45a3fb;
+}
+.dark-mode a.badge-group:hover > .badge.badge-primary {
+    color: #ffffff;
+    background-color: #45a3fb;
+    border-color: #45a3fb;
+}
+.dark-mode a.badge.badge-success:hover {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #81eea8;
+    border-color: #81eea8;
+}
+.dark-mode a.badge-group:hover > .badge.badge-success {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #81eea8;
+    border-color: #81eea8;
+}
+.dark-mode a.badge.badge-secondary:hover {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #ffe04d;
+    border-color: #ffe04d;
+}
+.dark-mode a.badge-group:hover > .badge.badge-secondary {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #ffe04d;
+    border-color: #ffe04d;
+}
+.dark-mode a.badge.badge-danger:hover {
+    color: #ffffff;
+    background-color: #ed586c;
+    border-color: #ed586c;
+}
+.dark-mode a.badge-group:hover > .badge.badge-danger {
+    color: #ffffff;
+    background-color: #ed586c;
+    border-color: #ed586c;
+}
+

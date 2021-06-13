@@ -1,0 +1,1363 @@
+/*
+-------------------------------------------------------------------------------
+7.  Buttons [hm-07]
+
+Notes:
+    ~ When a focused button is hovered over, only the text color and the 
+    background color is overridden. This is because most button focus effects 
+    tend to be based on border, box shadow, and outline. On the other hand, 
+    when a focused input is hovered over, nothing is overridden, and all the 
+    focus styles are kept unchanged.
+-------------------------------------------------------------------------------
+*/
+
+/* Default button */
+
+.btn {
+    display: inline-block;
+    height: 3.2rem;
+    line-height: 3.2rem;
+    padding: 0 1.5rem;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.7);
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.4rem;
+    -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+}
+.btn:hover {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7);
+    background-color: #f7f7f7;
+    background-image: none;
+    border-color: rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+}
+.btn:focus {
+    color: rgba(0, 0, 0, 0.7);
+    background-color: #ffffff;
+    background-image: none;
+    border-color: rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 0 0.2rem rgba(24, 144, 255, 0.6);
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(24, 144, 255, 0.6);
+    box-shadow: 0 0 0 0.2rem rgba(24, 144, 255, 0.6);
+    outline: 1px dotted transparent;
+    outline-offset: 0.2rem;
+}
+.btn.active {
+    color: rgba(0, 0, 0, 0.7);
+    background-color: #ffffff;
+    background-image: none;
+    border-color: rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 0 0.2rem rgba(24, 144, 255, 0.6);
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(24, 144, 255, 0.6);
+    box-shadow: 0 0 0 0.2rem rgba(24, 144, 255, 0.6);
+    outline: 1px dotted transparent;
+    outline-offset: 0.2rem;
+}
+.btn:focus:hover {
+    /*
+    Only text color and background properties are overridden, while the border 
+    color, box shadow, and the outline of the focus selector is kept.
+    */
+    color: rgba(0, 0, 0, 0.7);
+    background-color: #f7f7f7;
+    background-image: none;
+}
+.btn.active:hover {
+    /*
+    Only text color and background properties are overridden, while the border 
+    color, box shadow, and the outline of the focus selector is kept.
+    */
+    color: rgba(0, 0, 0, 0.7);
+    background-color: #f7f7f7;
+    background-image: none;
+}
+.dark-mode .btn {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.05);
+    background-image: none;
+    border-color: rgba(255, 255, 255, 0.025) transparent transparent transparent;
+    -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+}
+.dark-mode .btn:hover {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.1);
+    background-image: none;
+    border-color: rgba(255, 255, 255, 0.025) transparent transparent transparent;
+    -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+}
+.dark-mode .btn:focus {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.05);
+    background-image: none;
+    border-color: rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 0 0 0.2rem rgba(24, 144, 255, 0.3);
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(24, 144, 255, 0.3);
+    box-shadow: 0 0 0 0.2rem rgba(24, 144, 255, 0.3);
+    outline-color: transparent;
+}
+.dark-mode .btn.active {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.05);
+    background-image: none;
+    border-color: rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 0 0 0.2rem rgba(24, 144, 255, 0.3);
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(24, 144, 255, 0.3);
+    box-shadow: 0 0 0 0.2rem rgba(24, 144, 255, 0.3);
+    outline-color: transparent;
+}
+.dark-mode .btn:focus:hover {
+    /*
+    Only text color and background properties are overridden, while the border 
+    color, box shadow, and the outline of the focus selector is kept.
+    */
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.1);
+    background-image: none;
+}
+.dark-mode .btn.active:hover {
+    /*
+    Only text color and background properties are overridden, while the border 
+    color, box shadow, and the outline of the focus selector is kept.
+    */
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.1);
+    background-image: none;
+}
+.btn.disabled,
+.btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+.btn.disabled {
+    color: rgba(0, 0, 0, 0.7);
+    background-color: #ffffff;
+    background-image: none;
+    border-color: rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.btn:disabled {
+    color: rgba(0, 0, 0, 0.7);
+    background-color: #ffffff;
+    background-image: none;
+    border-color: rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.btn.disabled:hover {
+    color: rgba(0, 0, 0, 0.7);
+    background-color: #ffffff;
+    background-image: none;
+    border-color: rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.btn.disabled:focus {
+    color: rgba(0, 0, 0, 0.7);
+    background-color: #ffffff;
+    background-image: none;
+    border-color: rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.dark-mode .btn.disabled {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.05);
+    background-image: none;
+    border-color: rgba(255, 255, 255, 0.025) transparent transparent transparent;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.dark-mode .btn:disabled {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.05);
+    background-image: none;
+    border-color: rgba(255, 255, 255, 0.025) transparent transparent transparent;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.dark-mode .btn.disabled:hover {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.05);
+    background-image: none;
+    border-color: rgba(255, 255, 255, 0.025) transparent transparent transparent;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.dark-mode .btn.disabled:focus {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.05);
+    background-image: none;
+    border-color: rgba(255, 255, 255, 0.025) transparent transparent transparent;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+
+/* Alternate dark mode default button */
+
+.dark-mode .btn.alt-dm {
+    color: inherit;
+    background-color: rgba(0, 0, 0, 0.15);
+    background-image: none;
+    border-color: rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.025);
+    -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.025);
+    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.025);
+}
+.dark-mode .btn.alt-dm:hover {
+    color: inherit;
+    background-color: rgba(0, 0, 0, 0.2);
+    background-image: none;
+    border-color: rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.025);
+    -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.025);
+    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.025);
+}
+.dark-mode .btn.alt-dm:focus {
+    color: inherit;
+    background-color: rgba(0, 0, 0, 0.15);
+    background-image: none;
+    border-color: inherit;
+    -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.025);
+    -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.025);
+    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.025);
+    outline-color: transparent;
+}
+.dark-mode .btn.alt-dm.active {
+    color: inherit;
+    background-color: rgba(0, 0, 0, 0.15);
+    background-image: none;
+    border-color: inherit;
+    -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.025);
+    -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.025);
+    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.025);
+    outline-color: transparent;
+}
+.dark-mode .btn.alt-dm:focus:hover {
+    /*
+    Only text color and background properties are overridden, while the border 
+    color, box shadow, and the outline of the focus selector is kept.
+    */
+    color: inherit;
+    background-color: rgba(0, 0, 0, 0.2);
+    background-image: none;
+}
+.dark-mode .btn.alt-dm.active:hover {
+    /*
+    Only text color and background properties are overridden, while the border 
+    color, box shadow, and the outline of the focus selector is kept.
+    */
+    color: inherit;
+    background-color: rgba(0, 0, 0, 0.2);
+    background-image: none;
+}
+.dark-mode .btn.alt-dm.disabled {
+    color: inherit;
+    background-color: rgba(0, 0, 0, 0.15);
+    background-image: none;
+    border-color: rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.dark-mode .btn.alt-dm:disabled {
+    color: inherit;
+    background-color: rgba(0, 0, 0, 0.15);
+    background-image: none;
+    border-color: rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.dark-mode .btn.alt-dm.disabled:hover {
+    color: inherit;
+    background-color: rgba(0, 0, 0, 0.15);
+    background-image: none;
+    border-color: rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.dark-mode .btn.alt-dm.disabled:focus {
+    color: inherit;
+    background-color: rgba(0, 0, 0, 0.15);
+    background-image: none;
+    border-color: rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+
+/* Small button */
+
+.btn-sm {
+    height: 2.6rem;
+    line-height: 2.6rem;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+}
+
+/* Large button */
+
+.btn-lg {
+    height: 4rem;
+    line-height: 4rem;
+    padding: 0 2rem;
+    font-size: 1.8rem;
+}
+
+/* Block button */
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/* Link button */
+
+.btn.btn-link {
+    color: #1890ff;
+    background-color: transparent;
+    background-image: none;
+    border-color: transparent;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.btn.btn-link:hover {
+    color: #45a3fb;
+    background-color: transparent;
+    background-image: none;
+    border-color: transparent;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.btn.btn-link:focus {
+    color: #1890ff;
+    background-color: transparent;
+    background-image: none;
+    border-color: transparent;
+    -moz-box-shadow: 0 0 0 0.2rem rgba(24, 144, 255, 0.6);
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(24, 144, 255, 0.6);
+    box-shadow: 0 0 0 0.2rem rgba(24, 144, 255, 0.6);
+    outline-color: transparent;
+}
+.btn.btn-link.active {
+    color: #1890ff;
+    background-color: transparent;
+    background-image: none;
+    border-color: transparent;
+    -moz-box-shadow: 0 0 0 0.2rem rgba(24, 144, 255, 0.6);
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(24, 144, 255, 0.6);
+    box-shadow: 0 0 0 0.2rem rgba(24, 144, 255, 0.6);
+    outline-color: transparent;
+}
+.btn.btn-link:focus:hover {
+    /*
+    Only text color and background properties are overridden, while the border 
+    color, box shadow, and the outline of the focus selector is kept.
+    */
+    color: #45a3fb;
+    background-color: transparent;
+    background-image: none;
+}
+.btn.btn-link.active:hover {
+    /*
+    Only text color and background properties are overridden, while the border 
+    color, box shadow, and the outline of the focus selector is kept.
+    */
+    color: #45a3fb;
+    background-color: transparent;
+    background-image: none;
+}
+.dark-mode .btn.btn-link {
+    color: #1890ff;
+    background-color: transparent;
+    background-image: none;
+    border-color: transparent;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+}
+.dark-mode .btn.btn-link:hover {
+    color: #45a3fb;
+    background-color: transparent;
+    background-image: none;
+    border-color: transparent;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.dark-mode .btn.btn-link:focus {
+    color: #1890ff;
+    background-color: transparent;
+    background-image: none;
+    border-color: transparent;
+    -moz-box-shadow: 0 0 0 0.2rem rgba(24, 144, 255, 0.3);
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(24, 144, 255, 0.3);
+    box-shadow: 0 0 0 0.2rem rgba(24, 144, 255, 0.3);
+    outline-color: transparent;
+}
+.dark-mode .btn.btn-link.active {
+    color: #1890ff;
+    background-color: transparent;
+    background-image: none;
+    border-color: transparent;
+    -moz-box-shadow: 0 0 0 0.2rem rgba(24, 144, 255, 0.3);
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(24, 144, 255, 0.3);
+    box-shadow: 0 0 0 0.2rem rgba(24, 144, 255, 0.3);
+    outline-color: transparent;
+}
+.dark-mode .btn.btn-link:focus:hover {
+    /*
+    Only text color and background properties are overridden, while the border 
+    color, box shadow, and the outline of the focus selector is kept.
+    */
+    color: #45a3fb;
+    background-color: transparent;
+    background-image: none;
+}
+.dark-mode .btn.btn-link.active:hover {
+    /*
+    Only text color and background properties are overridden, while the border 
+    color, box shadow, and the outline of the focus selector is kept.
+    */
+    color: #45a3fb;
+    background-color: transparent;
+    background-image: none;
+}
+.btn.btn-link.disabled {
+    color: #1890ff;
+    background-color: transparent;
+    background-image: none;
+    border-color: transparent;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.btn.btn-link:disabled {
+    color: #1890ff;
+    background-color: transparent;
+    background-image: none;
+    border-color: transparent;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.btn.btn-link.disabled:hover {
+    color: #1890ff;
+    background-color: transparent;
+    background-image: none;
+    border-color: transparent;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.btn.btn-link.disabled:focus {
+    color: #1890ff;
+    background-color: transparent;
+    background-image: none;
+    border-color: transparent;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.dark-mode .btn.btn-link.disabled {
+    color: #1890ff;
+    background-color: transparent;
+    background-image: none;
+    border-color: transparent;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.dark-mode .btn.btn-link:disabled {
+    color: #1890ff;
+    background-color: transparent;
+    background-image: none;
+    border-color: transparent;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.dark-mode .btn.btn-link.disabled:hover {
+    color: #1890ff;
+    background-color: transparent;
+    background-image: none;
+    border-color: transparent;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.dark-mode .btn.btn-link.disabled:focus {
+    color: #1890ff;
+    background-color: transparent;
+    background-image: none;
+    border-color: transparent;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+
+/* Primary button */
+
+.btn.btn-primary {
+    color: #ffffff;
+    background-color: #1890ff;
+    background-image: none;
+    border-color: #1890ff;
+    -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+}
+.btn.btn-primary:hover {
+    color: #ffffff;
+    background-color: #45a3fb;
+    background-image: none;
+    border-color: #45a3fb;
+    -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+}
+.btn.btn-primary:focus {
+    color: #ffffff;
+    background-color: #1890ff;
+    background-image: none;
+    border-color: #1890ff;
+    -moz-box-shadow: 0 0 0 0.3rem rgba(24, 144, 255, 0.3);
+    -webkit-box-shadow: 0 0 0 0.3rem rgba(24, 144, 255, 0.3);
+    box-shadow: 0 0 0 0.3rem rgba(24, 144, 255, 0.3);
+    outline-color: transparent;
+}
+.btn.btn-primary.active {
+    color: #ffffff;
+    background-color: #1890ff;
+    background-image: none;
+    border-color: #1890ff;
+    -moz-box-shadow: 0 0 0 0.3rem rgba(24, 144, 255, 0.3);
+    -webkit-box-shadow: 0 0 0 0.3rem rgba(24, 144, 255, 0.3);
+    box-shadow: 0 0 0 0.3rem rgba(24, 144, 255, 0.3);
+    outline-color: transparent;
+}
+.btn.btn-primary:focus:hover {
+    /*
+    Only text color and background properties are overridden, while the border 
+    color, box shadow, and the outline of the focus selector is kept.
+    */
+    color: #ffffff;
+    background-color: #45a3fb;
+    background-image: none;
+}
+.btn.btn-primary.active:hover {
+    /*
+    Only text color and background properties are overridden, while the border 
+    color, box shadow, and the outline of the focus selector is kept.
+    */
+    color: #ffffff;
+    background-color: #45a3fb;
+    background-image: none;
+}
+.dark-mode .btn.btn-primary {
+    color: #ffffff;
+    background-color: #1890ff;
+    background-image: none;
+    border-color: #1890ff;
+    -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+}
+.dark-mode .btn.btn-primary:hover {
+    color: #ffffff;
+    background-color: #45a3fb;
+    background-image: none;
+    border-color: #45a3fb;
+    -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+}
+.dark-mode .btn.btn-primary:focus {
+    color: #ffffff;
+    background-color: #1890ff;
+    background-image: none;
+    border-color: #1890ff;
+    -moz-box-shadow: 0 0 0 0.3rem rgba(24, 144, 255, 0.3);
+    -webkit-box-shadow: 0 0 0 0.3rem rgba(24, 144, 255, 0.3);
+    box-shadow: 0 0 0 0.3rem rgba(24, 144, 255, 0.3);
+    outline-color: transparent;
+}
+.dark-mode .btn.btn-primary.active {
+    color: #ffffff;
+    background-color: #1890ff;
+    background-image: none;
+    border-color: #1890ff;
+    -moz-box-shadow: 0 0 0 0.3rem rgba(24, 144, 255, 0.3);
+    -webkit-box-shadow: 0 0 0 0.3rem rgba(24, 144, 255, 0.3);
+    box-shadow: 0 0 0 0.3rem rgba(24, 144, 255, 0.3);
+    outline-color: transparent;
+}
+.dark-mode .btn.btn-primary:focus:hover {
+    /*
+    Only text color and background properties are overridden, while the border 
+    color, box shadow, and the outline of the focus selector is kept.
+    */
+    color: #ffffff;
+    background-color: #45a3fb;
+    background-image: none;
+}
+.dark-mode .btn.btn-primary.active:hover {
+    /*
+    Only text color and background properties are overridden, while the border 
+    color, box shadow, and the outline of the focus selector is kept.
+    */
+    color: #ffffff;
+    background-color: #45a3fb;
+    background-image: none;
+}
+.btn.btn-primary.disabled {
+    color: #ffffff;
+    background-color: #1890ff;
+    background-image: none;
+    border-color: #1890ff;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.btn.btn-primary:disabled {
+    color: #ffffff;
+    background-color: #1890ff;
+    background-image: none;
+    border-color: #1890ff;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.btn.btn-primary.disabled:hover {
+    color: #ffffff;
+    background-color: #1890ff;
+    background-image: none;
+    border-color: #1890ff;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.btn.btn-primary.disabled:focus {
+    color: #ffffff;
+    background-color: #1890ff;
+    background-image: none;
+    border-color: #1890ff;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.dark-mode .btn.btn-primary.disabled {
+    color: #ffffff;
+    background-color: #1890ff;
+    background-image: none;
+    border-color: #1890ff;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.dark-mode .btn.btn-primary:disabled {
+    color: #ffffff;
+    background-color: #1890ff;
+    background-image: none;
+    border-color: #1890ff;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.dark-mode .btn.btn-primary.disabled:hover {
+    color: #ffffff;
+    background-color: #1890ff;
+    background-image: none;
+    border-color: #1890ff;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.dark-mode .btn.btn-primary.disabled:focus {
+    color: #ffffff;
+    background-color: #1890ff;
+    background-image: none;
+    border-color: #1890ff;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+
+/* Success button */
+
+.btn.btn-success {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #0be881;
+    background-image: none;
+    border-color: #0be881;
+    -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+}
+.btn.btn-success:hover {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #81eea8;
+    background-image: none;
+    border-color: #81eea8;
+    -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+}
+.btn.btn-success:focus {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #0be881;
+    background-image: none;
+    border-color: #0be881;
+    -moz-box-shadow: 0 0 0 0.3rem rgba(11, 232, 129, 0.3);
+    -webkit-box-shadow: 0 0 0 0.3rem rgba(11, 232, 129, 0.3);
+    box-shadow: 0 0 0 0.3rem rgba(11, 232, 129, 0.3);
+    outline-color: transparent;
+}
+.btn.btn-success.active {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #0be881;
+    background-image: none;
+    border-color: #0be881;
+    -moz-box-shadow: 0 0 0 0.3rem rgba(11, 232, 129, 0.3);
+    -webkit-box-shadow: 0 0 0 0.3rem rgba(11, 232, 129, 0.3);
+    box-shadow: 0 0 0 0.3rem rgba(11, 232, 129, 0.3);
+    outline-color: transparent;
+}
+.btn.btn-success:focus:hover {
+    /*
+    Only text color and background properties are overridden, while the border 
+    color, box shadow, and the outline of the focus selector is kept.
+    */
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #81eea8;
+    background-image: none;
+}
+.btn.btn-success.active:hover {
+    /*
+    Only text color and background properties are overridden, while the border 
+    color, box shadow, and the outline of the focus selector is kept.
+    */
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #81eea8;
+    background-image: none;
+}
+.dark-mode .btn.btn-success {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #0be881;
+    background-image: none;
+    border-color: #0be881;
+    -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+}
+.dark-mode .btn.btn-success:hover {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #81eea8;
+    background-image: none;
+    border-color: #81eea8;
+    -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+}
+.dark-mode .btn.btn-success:focus {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #0be881;
+    background-image: none;
+    border-color: #0be881;
+    -moz-box-shadow: 0 0 0 0.3rem rgba(11, 232, 129, 0.3);
+    -webkit-box-shadow: 0 0 0 0.3rem rgba(11, 232, 129, 0.3);
+    box-shadow: 0 0 0 0.3rem rgba(11, 232, 129, 0.3);
+    outline-color: transparent;
+}
+.dark-mode .btn.btn-success.active {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #0be881;
+    background-image: none;
+    border-color: #0be881;
+    -moz-box-shadow: 0 0 0 0.3rem rgba(11, 232, 129, 0.3);
+    -webkit-box-shadow: 0 0 0 0.3rem rgba(11, 232, 129, 0.3);
+    box-shadow: 0 0 0 0.3rem rgba(11, 232, 129, 0.3);
+    outline-color: transparent;
+}
+.dark-mode .btn.btn-success:focus:hover {
+    /*
+    Only text color and background properties are overridden, while the border 
+    color, box shadow, and the outline of the focus selector is kept.
+    */
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #81eea8;
+    background-image: none;
+}
+.dark-mode .btn.btn-success.active:hover {
+    /*
+    Only text color and background properties are overridden, while the border 
+    color, box shadow, and the outline of the focus selector is kept.
+    */
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #81eea8;
+    background-image: none;
+}
+.btn.btn-success.disabled {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #0be881;
+    background-image: none;
+    border-color: #0be881;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.btn.btn-success:disabled {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #0be881;
+    background-image: none;
+    border-color: #0be881;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.btn.btn-success.disabled:hover {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #0be881;
+    background-image: none;
+    border-color: #0be881;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.btn.btn-success.disabled:focus {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #0be881;
+    background-image: none;
+    border-color: #0be881;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.dark-mode .btn.btn-success.disabled {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #0be881;
+    background-image: none;
+    border-color: #0be881;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.dark-mode .btn.btn-success:disabled {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #0be881;
+    background-image: none;
+    border-color: #0be881;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.dark-mode .btn.btn-success.disabled:hover {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #0be881;
+    background-image: none;
+    border-color: #0be881;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.dark-mode .btn.btn-success.disabled:focus {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #0be881;
+    background-image: none;
+    border-color: #0be881;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+
+/* Secondary button */
+
+.btn.btn-secondary {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #ffcf00;
+    background-image: none;
+    border-color: #ffcf00;
+    -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+}
+.btn.btn-secondary:hover {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #ffe04d;
+    background-image: none;
+    border-color: #ffe04d;
+    -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+}
+.btn.btn-secondary:focus {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #ffcf00;
+    background-image: none;
+    border-color: #ffcf00;
+    -moz-box-shadow: 0 0 0 0.3rem rgba(255, 207, 0, 0.3);
+    -webkit-box-shadow: 0 0 0 0.3rem rgba(255, 207, 0, 0.3);
+    box-shadow: 0 0 0 0.3rem rgba(255, 207, 0, 0.3);
+    outline-color: transparent;
+}
+.btn.btn-secondary.active {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #ffcf00;
+    background-image: none;
+    border-color: #ffcf00;
+    -moz-box-shadow: 0 0 0 0.3rem rgba(255, 207, 0, 0.3);
+    -webkit-box-shadow: 0 0 0 0.3rem rgba(255, 207, 0, 0.3);
+    box-shadow: 0 0 0 0.3rem rgba(255, 207, 0, 0.3);
+    outline-color: transparent;
+}
+.btn.btn-secondary:focus:hover {
+    /*
+    Only text color and background properties are overridden, while the border 
+    color, box shadow, and the outline of the focus selector is kept.
+    */
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #ffe04d;
+    background-image: none;
+}
+.btn.btn-secondary.active:hover {
+    /*
+    Only text color and background properties are overridden, while the border 
+    color, box shadow, and the outline of the focus selector is kept.
+    */
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #ffe04d;
+    background-image: none;
+}
+.dark-mode .btn.btn-secondary {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #ffcf00;
+    background-image: none;
+    border-color: #ffcf00;
+    -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+}
+.dark-mode .btn.btn-secondary:hover {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #ffe04d;
+    background-image: none;
+    border-color: #ffe04d;
+    -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+}
+.dark-mode .btn.btn-secondary:focus {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #ffcf00;
+    background-image: none;
+    border-color: #ffcf00;
+    -moz-box-shadow: 0 0 0 0.3rem rgba(255, 207, 0, 0.3);
+    -webkit-box-shadow: 0 0 0 0.3rem rgba(255, 207, 0, 0.3);
+    box-shadow: 0 0 0 0.3rem rgba(255, 207, 0, 0.3);
+    outline-color: transparent;
+}
+.dark-mode .btn.btn-secondary.active {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #ffcf00;
+    background-image: none;
+    border-color: #ffcf00;
+    -moz-box-shadow: 0 0 0 0.3rem rgba(255, 207, 0, 0.3);
+    -webkit-box-shadow: 0 0 0 0.3rem rgba(255, 207, 0, 0.3);
+    box-shadow: 0 0 0 0.3rem rgba(255, 207, 0, 0.3);
+    outline-color: transparent;
+}
+.dark-mode .btn.btn-secondary:focus:hover {
+    /*
+    Only text color and background properties are overridden, while the border 
+    color, box shadow, and the outline of the focus selector is kept.
+    */
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #ffe04d;
+    background-image: none;
+}
+.dark-mode .btn.btn-secondary.active:hover {
+    /*
+    Only text color and background properties are overridden, while the border 
+    color, box shadow, and the outline of the focus selector is kept.
+    */
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #ffe04d;
+    background-image: none;
+}
+.btn.btn-secondary.disabled {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #ffcf00;
+    background-image: none;
+    border-color: #ffcf00;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.btn.btn-secondary:disabled {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #ffcf00;
+    background-image: none;
+    border-color: #ffcf00;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.btn.btn-secondary.disabled:hover {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #ffcf00;
+    background-image: none;
+    border-color: #ffcf00;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.btn.btn-secondary.disabled:focus {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #ffcf00;
+    background-image: none;
+    border-color: #ffcf00;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.dark-mode .btn.btn-secondary.disabled {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #ffcf00;
+    background-image: none;
+    border-color: #ffcf00;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.dark-mode .btn.btn-secondary:disabled {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #ffcf00;
+    background-image: none;
+    border-color: #ffcf00;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.dark-mode .btn.btn-secondary.disabled:hover {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #ffcf00;
+    background-image: none;
+    border-color: #ffcf00;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.dark-mode .btn.btn-secondary.disabled:focus {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #ffcf00;
+    background-image: none;
+    border-color: #ffcf00;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+
+/* Danger button */
+
+.btn.btn-danger {
+    color: #ffffff;
+    background-color: #ff4d4f;
+    background-image: none;
+    border-color: #ff4d4f;
+    -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+}
+.btn.btn-danger:hover {
+    color: #ffffff;
+    background-color: #ed586c;
+    background-image: none;
+    border-color: #ed586c;
+    -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);
+}
+.btn.btn-danger:focus {
+    color: #ffffff;
+    background-color: #ff4d4f;
+    background-image: none;
+    border-color: #ff4d4f;
+    -moz-box-shadow: 0 0 0 0.3rem rgba(245, 34, 45, 0.3);
+    -webkit-box-shadow: 0 0 0 0.3rem rgba(245, 34, 45, 0.3);
+    box-shadow: 0 0 0 0.3rem rgba(245, 34, 45, 0.3);
+    outline-color: transparent;
+}
+.btn.btn-danger.active {
+    color: #ffffff;
+    background-color: #ff4d4f;
+    background-image: none;
+    border-color: #ff4d4f;
+    -moz-box-shadow: 0 0 0 0.3rem rgba(245, 34, 45, 0.3);
+    -webkit-box-shadow: 0 0 0 0.3rem rgba(245, 34, 45, 0.3);
+    box-shadow: 0 0 0 0.3rem rgba(245, 34, 45, 0.3);
+    outline-color: transparent;
+}
+.btn.btn-danger:focus:hover {
+    /*
+    Only text color and background properties are overridden, while the border 
+    color, box shadow, and the outline of the focus selector is kept.
+    */
+    color: #ffffff;
+    background-color: #ed586c;
+    background-image: none;
+}
+.btn.btn-danger.active:hover {
+    /*
+    Only text color and background properties are overridden, while the border 
+    color, box shadow, and the outline of the focus selector is kept.
+    */
+    color: #ffffff;
+    background-color: #ed586c;
+    background-image: none;
+}
+.dark-mode .btn.btn-danger {
+    color: #ffffff;
+    background-color: #ff4d4f;
+    background-image: none;
+    border-color: #ff4d4f;
+    -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+}
+.dark-mode .btn.btn-danger:hover {
+    color: #ffffff;
+    background-color: #ed586c;
+    background-image: none;
+    border-color: #ed586c;
+    -moz-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+}
+.dark-mode .btn.btn-danger:focus {
+    color: #ffffff;
+    background-color: #ff4d4f;
+    background-image: none;
+    border-color: #ff4d4f;
+    -moz-box-shadow: 0 0 0 0.3rem rgba(245, 34, 45, 0.3);
+    -webkit-box-shadow: 0 0 0 0.3rem rgba(245, 34, 45, 0.3);
+    box-shadow: 0 0 0 0.3rem rgba(245, 34, 45, 0.3);
+    outline-color: transparent;
+}
+.dark-mode .btn.btn-danger.active {
+    color: #ffffff;
+    background-color: #ff4d4f;
+    background-image: none;
+    border-color: #ff4d4f;
+    -moz-box-shadow: 0 0 0 0.3rem rgba(245, 34, 45, 0.3);
+    -webkit-box-shadow: 0 0 0 0.3rem rgba(245, 34, 45, 0.3);
+    box-shadow: 0 0 0 0.3rem rgba(245, 34, 45, 0.3);
+    outline-color: transparent;
+}
+.dark-mode .btn.btn-danger:focus:hover {
+    /*
+    Only text color and background properties are overridden, while the border 
+    color, box shadow, and the outline of the focus selector is kept.
+    */
+    color: #ffffff;
+    background-color: #ed586c;
+    background-image: none;
+}
+.dark-mode .btn.btn-danger.active:hover {
+    /*
+    Only text color and background properties are overridden, while the border 
+    color, box shadow, and the outline of the focus selector is kept.
+    */
+    color: #ffffff;
+    background-color: #ed586c;
+    background-image: none;
+}
+.btn.btn-danger.disabled {
+    color: #ffffff;
+    background-color: #ff4d4f;
+    background-image: none;
+    border-color: #ff4d4f;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.btn.btn-danger:disabled {
+    color: #ffffff;
+    background-color: #ff4d4f;
+    background-image: none;
+    border-color: #ff4d4f;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.btn.btn-danger.disabled:hover {
+    color: #ffffff;
+    background-color: #ff4d4f;
+    background-image: none;
+    border-color: #ff4d4f;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.btn.btn-danger.disabled:focus {
+    color: #ffffff;
+    background-color: #ff4d4f;
+    background-image: none;
+    border-color: #ff4d4f;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.dark-mode .btn.btn-danger.disabled {
+    color: #ffffff;
+    background-color: #ff4d4f;
+    background-image: none;
+    border-color: #ff4d4f;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.dark-mode .btn.btn-danger:disabled {
+    color: #ffffff;
+    background-color: #ff4d4f;
+    background-image: none;
+    border-color: #ff4d4f;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.dark-mode .btn.btn-danger.disabled:hover {
+    color: #ffffff;
+    background-color: #ff4d4f;
+    background-image: none;
+    border-color: #ff4d4f;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+.dark-mode .btn.btn-danger.disabled:focus {
+    color: #ffffff;
+    background-color: #ff4d4f;
+    background-image: none;
+    border-color: #ff4d4f;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+
+/* Square button */
+
+.btn-square {
+    width: 3.2rem;
+    padding-left: 0;
+    padding-right: 0;
+}
+.btn-square.btn-sm {
+    width: 2.6rem;
+    padding-left: 0;
+    padding-right: 0;
+}
+.btn-square.btn-lg {
+    width: 4rem;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Rounded button */
+
+.btn-rounded {
+    border-radius: 3.2rem;
+}
+.btn-rounded.btn-sm {
+    border-radius: 2.6rem;
+}
+.btn-rounded.btn-lg {
+    border-radius: 4rem;
+}
+
